@@ -3042,7 +3042,6 @@
       </modules>
 
       <modules>
-         <command name="load">parallel-netcdf/1.8.1</command>
          <command name="load">hdf5/1.10.3</command>
        </modules>
 
@@ -3078,7 +3077,6 @@
     </environment_variables>
     <environment_variables mpilib="!mpi-serial">
       <env name="HDF5_PATH">$ENV{OLCF_HDF5_ROOT}</env>
-      <env name="PNETCDF_PATH">$ENV{OLCF_PARALLEL_NETCDF_ROOT}</env>
     </environment_variables>
     <environment_variables compiler="gnu">
       <env name="ADIOS_DIR">/gpfs/alpine/cli115/proj-shared/3rdparty/adios/1.13.1/gcc-6.4.0</env>
@@ -3088,6 +3086,15 @@
     </environment_variables>
     <environment_variables compiler="pgi">
       <env name="ADIOS_DIR">/gpfs/alpine/cli115/proj-shared/3rdparty/adios/1.13.1/pgi-19.4</env>
+    </environment_variables>
+    <environment_variables compiler="gnu" mpilib="!mpi-serial">
+      <env name="PNETCDF_PATH">/gpfs/alpine/cli115/proj-shared/3rdparty/pnetcdf/1.11.2/gcc-6.4.0</env>
+    </environment_variables>
+    <environment_variables compiler="ibm" mpilib="!mpi-serial">
+      <env name="PNETCDF_PATH">/gpfs/alpine/cli115/proj-shared/3rdparty/pnetcdf/1.11.2/xl-16.1.1</env>
+    </environment_variables>
+    <environment_variables compiler="pgi" mpilib="!mpi-serial">
+      <env name="PNETCDF_PATH">/gpfs/alpine/cli115/proj-shared/3rdparty/pnetcdf/1.11.2/pgi-19.4</env>
     </environment_variables>
   </machine>
 
